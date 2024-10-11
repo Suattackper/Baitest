@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model List<baitest.Models.KhoaHoc>
+
+<main>
+    <ul>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <li><a href="@Url.Action("MonHocs", "Home", new {id=item.ID})">@item.TenKhoaHoc</a></li>
+            }
+        }
+        else
+        {
+            <li class="list-group-item">Chưa có khóa học!</li>
+        }
+    </ul>
+</main>

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "MonHocs";
+}
+@model List<baitest.Models.MonHoc>
+
+<main>
+    @if (Model != null)
+    {
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.TenMonHoc</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Không có môn học cho khóa học học này!</p>
+    }
+    <p ><a href="@Url.Action("Index", "Home")">Trở về!</a></p>
+</main>
+
